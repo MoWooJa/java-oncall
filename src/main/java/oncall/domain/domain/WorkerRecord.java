@@ -3,20 +3,20 @@ package oncall.domain.domain;
 import java.util.List;
 
 public class WorkerRecord {
-    private final List<DaysOfWeek> weekdays;
+    private final List<DayInfo> weekdays;
 
-    private final List<DaysOfWeek> holidays;
+    private final List<DayInfo> holidays;
 
-    public WorkerRecord(List<DaysOfWeek> weekdays, List<DaysOfWeek> holidays) {
+    public WorkerRecord(List<DayInfo> weekdays, List<DayInfo> holidays) {
         this.weekdays = weekdays;
         this.holidays = holidays;
     }
 
-    public List<DaysOfWeek> getWeekdays() {
+    public List<DayInfo> getWeekdays() {
         return weekdays;
     }
 
-    public List<DaysOfWeek> getHolidays() {
+    public List<DayInfo> getHolidays() {
         return holidays;
     }
 }

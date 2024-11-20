@@ -11,6 +11,14 @@ public class WorkerGroup {
     private static final int MIN_WORKER_COUNT = 5;
     private static final int MAX_WORKER_COUNT = 35;
 
+    public List<String> getWeekdaysWorker() {
+        return weekdaysWorker;
+    }
+
+    public List<String> getHolidaysWorker() {
+        return holidaysWorker;
+    }
+
     public WorkerGroup(List<String> weekdaysWorker, List<String> holidaysWorker) {
         this.weekdaysWorker = weekdaysWorker;
         this.holidaysWorker = holidaysWorker;

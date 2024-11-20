@@ -1,9 +1,6 @@
 package oncall.domain.domainService;
 
-import oncall.domain.domain.DaysOfWeek;
-import oncall.domain.domain.Holidays;
-import oncall.domain.domain.Month;
-import oncall.domain.domain.WorkerRecord;
+import oncall.domain.domain.*;
 import oncall.domain.dto.ParsedInput;
 
 import java.util.ArrayList;
@@ -26,17 +23,17 @@ public class DateCalculateService {
         List<DaysOfWeek> daysOfWeeks = Arrays.asList(DaysOfWeek.values());
         int startIndex = daysOfWeeks.indexOf(startDay);
 
-        List<DaysOfWeek> weekdays = new ArrayList<>();
-        List<DaysOfWeek> holidays = new ArrayList<>();
+        List<DayInfo> weekdays = new ArrayList<>();
+        List<DayInfo> holidays = new ArrayList<>();
 
         for (int day = 1; day <= daysInMonth; day++) {
             DaysOfWeek currentDay = daysOfWeeks.get((startIndex + day - 1) % 7);
-            if (currentDay.getIsHoliday() || Holidays.isHoliday(month, day)) {
-                holidays.add(currentDay);
-                continue;
-            }
+            DayInfo dayInfo = new DayInfo(day, currentDay);
 
-            weekdays.add(currentDay);
+            if (dayInfo.isHoliday(month)) {
+                holidays.add(dayInfo);
+            }
+            weekdays.add(dayInfo);
         }
 
         return new WorkerRecord(weekdays,holidays);
