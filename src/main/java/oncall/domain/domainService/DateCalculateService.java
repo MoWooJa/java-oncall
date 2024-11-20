@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class    DateCalculateService {
+public class DateCalculateService {
     public WorkerRecord calculateWeekdaysAndHolidays(ParsedInput parsedInput) {
         Month month = Month.check(parsedInput.getMonth());
 
