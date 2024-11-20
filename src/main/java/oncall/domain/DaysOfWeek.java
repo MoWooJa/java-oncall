@@ -1,22 +1,28 @@
 package oncall.domain;
 
 public enum DaysOfWeek {
-    MONDAY("월"),
-    TUESDAY("화"),
-    WEDNESDAY("수"),
-    THURSDAY("목"),
-    FRIDAY("금"),
-    SATURDAY("토"),
-    SUNDAY("일");
+    MONDAY("월",false),
+    TUESDAY("화", false),
+    WEDNESDAY("수", false),
+    THURSDAY("목", false),
+    FRIDAY("금", false),
+    SATURDAY("토", true),
+    SUNDAY("일", true);
 
     public String getKoreanDay() {
         return koreanDay;
     }
 
-    private String koreanDay;
+    public Boolean getIsHoliday() {
+        return isHoliday;
+    }
 
-    DaysOfWeek(String koreanDay) {
+    private String koreanDay;
+    private Boolean isHoliday;
+
+    DaysOfWeek(String koreanDay, boolean isHoliday) {
         this.koreanDay = koreanDay;
+        this.isHoliday = isHoliday;
     }
 
     public static DaysOfWeek check(String koreanDay) {
