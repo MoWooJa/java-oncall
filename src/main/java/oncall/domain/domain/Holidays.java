@@ -1,4 +1,4 @@
-package oncall.domain;
+package oncall.domain.domain;
 
 public enum Holidays {
     ONE_ONE(1, 1),

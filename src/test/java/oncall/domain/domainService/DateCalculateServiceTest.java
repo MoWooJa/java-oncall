@@ -1,7 +1,7 @@
 package oncall.domain.domainService;
 
-import oncall.domain.DaysOfWeek;
-import oncall.domain.WorkerRecord;
+import oncall.domain.domain.DaysOfWeek;
+import oncall.domain.domain.WorkerRecord;
 import oncall.domain.dto.ParsedInput;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

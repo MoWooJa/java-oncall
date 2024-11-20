@@ -1,4 +1,4 @@
-package oncall.domain;
+package oncall.domain.domain;
 
 public enum DaysOfWeek {
     MONDAY("월",false),
