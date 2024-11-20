@@ -1,6 +1,7 @@
 package oncall.config;
 
 import oncall.controller.OncallController;
+import oncall.domain.DomainFactory;
 import oncall.service.DomainService;
 import oncall.view.InputView;
 import oncall.view.OutputView;
@@ -16,10 +17,15 @@ public class AppConfig {
     }
 
     private OutputView outputView() {
-        return new OutputView():
+        return new OutputView();
     }
 
     private DomainService domainService() {
-        return new DomainService();
+        return new DomainService(domainFactory());
     }
+
+    private DomainFactory domainFactory() {
+        return new DomainFactory();
+    }
+
 }
