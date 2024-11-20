@@ -1,20 +1,20 @@
 package oncall;
 
 public enum Month {
-    JANUARY(1,31),
-    FEBRUARY(2,28),
-    MARCH(3,31),
-    APRIL(4,30),
-    MAY(5,31),
-    JUNE(6,30),
-    JULY(7,31),
-    AUGUST(8,31),
-    SEPTEMBER(9,30),
-    OCTOBER(10,31),
-    NOVEMBER(11,30),
-    DECEMBER(12,31);
+    JANUARY("1",31),
+    FEBRUARY("2",28),
+    MARCH("3",31),
+    APRIL("4",30),
+    MAY("5",31),
+    JUNE("6",30),
+    JULY("7",31),
+    AUGUST("8",31),
+    SEPTEMBER("9",30),
+    OCTOBER("10",31),
+    NOVEMBER("11",30),
+    DECEMBER("12",31);
 
-    public int getMonth() {
+    public String getMonth() {
         return month;
     }
 
@@ -22,17 +22,17 @@ public enum Month {
         return days;
     }
 
-    private int month;
+    private String month;
     private int days;
 
-    Month(int month, int days) {
+    Month(String month, int days) {
         this.month = month;
         this.days = days;
     }
 
-    public static Month check(int month) {
+    public static Month check(String month) {
         for (Month value : Month.values()) {
-            if (month == value.month) {
+            if (month.equals(value.month)) {
                 return value;
             }
         }
