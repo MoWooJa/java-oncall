@@ -8,9 +8,9 @@ public class Day {
     private static final String OUTPUT_FORM_DAY = "일 ";
     private static final String LINE_SEPARATOR = System.lineSeparator();
 
-    private int month;
-    private int date;
-    private Week day;
+    private final int month;
+    private final int date;
+    private final Week day;
     private boolean isLegalHoliday;
     private String workerName;
 

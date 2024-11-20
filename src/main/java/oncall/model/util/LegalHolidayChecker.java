@@ -4,7 +4,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 
 public class LegalHolidayChecker {
-    static private LinkedHashMap<Integer, List<Integer>> holidays = new LinkedHashMap<>();
+    static final private LinkedHashMap<Integer, List<Integer>> holidays = new LinkedHashMap<>();
 
     static {
         holidays.put(1,List.of(1));

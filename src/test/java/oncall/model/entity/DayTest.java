@@ -1,10 +1,10 @@
 package oncall.model.entity;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import oncall.model.entity.type.Week;
-import oncall.model.util.LegalHolidayChecker;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -12,7 +12,7 @@ class DayTest {
     @DisplayName("하루는 일자, 요일을 입력헤 생성할 수 있다.")
     @Test
     void dayCreateAndStoreTest() {
-        Day day = new Day(1,1, Week.MONDAY);
+        Day day = new Day(1, 1, Week.MONDAY);
         assertThat(day.toString().trim()).isEqualTo("1월 1일 월");
     }
 
