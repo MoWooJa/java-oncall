@@ -1,4 +1,4 @@
-package oncall;
+package oncall.domain;
 
 public enum Month {
     JANUARY("1",31),

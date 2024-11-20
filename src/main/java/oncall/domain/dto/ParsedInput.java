@@ -1,4 +1,4 @@
-package oncall;
+package oncall.domain.dto;
 
 public class ParsedInput {
     String month;

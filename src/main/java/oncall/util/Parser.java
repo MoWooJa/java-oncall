@@ -1,4 +1,6 @@
-package oncall;
+package oncall.util;
+
+import oncall.domain.dto.ParsedInput;
 
 public class Parser {
     public static String DELIMITER = ",";
