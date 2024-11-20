@@ -10,8 +10,16 @@ public class InputHandler {
         this.inputView = inputView;
     }
 
-    void askMonthAndDay() {
-        handle(inputView::getMonthAndDay);
+    MonthAndDayDto askMonthAndDay() {
+        return handle(inputView::getMonthAndDay);
+    }
+
+    People askWeekDaysList() {
+        return handle(inputView::getWeekDaysList);
+    }
+
+    OnCalls askWeekendsList(People weekdays) {
+        return handle(() -> inputView.getWeekendsList(weekdays));
     }
 
     private <T> T handle(Supplier<T> supplier) {

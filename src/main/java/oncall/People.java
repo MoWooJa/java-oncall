@@ -1,5 +1,8 @@
 package oncall;
 
+import static oncall.Exceptions.NICKNAME_DUPLICATE;
+import static oncall.Exceptions.PEOPLE_RANGE_ERROR;
+
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
@@ -16,10 +19,10 @@ public class People {
     private void validate(List<Person> people) {
         Set<Person> removedDuplicated = new HashSet<>(people);
         if (removedDuplicated.size() != people.size()) {
-            throw new IllegalArgumentException(Exceptions.INVALID_INPUT.getMessage());
+            throw new IllegalArgumentException(NICKNAME_DUPLICATE.getMessage());
         }
         if (!(people.size() >= 5 && people.size() <= 35)) {
-            throw new IllegalArgumentException(Exceptions.INVALID_INPUT.getMessage());
+            throw new IllegalArgumentException(PEOPLE_RANGE_ERROR.getMessage());
         }
     }
 

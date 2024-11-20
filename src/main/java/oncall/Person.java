@@ -9,8 +9,8 @@ public class Person {
     }
 
     public void validate(String name) {
-        if (name.length() > 5) {
-            throw new IllegalArgumentException(Exceptions.INVALID_INPUT.getMessage());
+        if (name.length() > 5 || name.length() < 1) {
+            throw new IllegalArgumentException(Exceptions.NICKNAME_LENGTH_ERROR.getMessage());
         }
     }
 

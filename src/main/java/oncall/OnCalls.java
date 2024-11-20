@@ -1,5 +1,7 @@
 package oncall;
 
+import static oncall.Exceptions.DIFFERENT_PEOPLE;
+
 import java.util.List;
 
 public class OnCalls {
@@ -17,11 +19,11 @@ public class OnCalls {
         List<Person> sortedWeekdays = weekdays.sortedByNaturalOrder();
 
         if (sortedWeekends.size() != sortedWeekdays.size()) {
-            throw new IllegalArgumentException(Exceptions.INVALID_INPUT.getMessage());
+            throw new IllegalArgumentException(DIFFERENT_PEOPLE.getMessage());
         }
         for (int i = 0; i < sortedWeekdays.size(); i++) {
             if (!sortedWeekends.get(i).getName().equals(sortedWeekdays.get(i).getName())) {
-                throw new IllegalArgumentException(Exceptions.INVALID_INPUT.getMessage());
+                throw new IllegalArgumentException(DIFFERENT_PEOPLE.getMessage());
             }
         }
     }
