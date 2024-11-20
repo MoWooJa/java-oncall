@@ -12,15 +12,22 @@ class DayTest {
     @DisplayName("하루는 일자, 요일을 입력헤 생성할 수 있다.")
     @Test
     void dayCreateAndStoreTest() {
-        Day day = new Day(1, 1, Week.MONDAY);
-        assertThat(day.toString().trim()).isEqualTo("1월 1일 월");
+        Day day = new Day(1, 1, Week.SATURDAY);
+        assertThat(day.toString().trim()).isEqualTo("1월 1일 토");
     }
+
+    @DisplayName("평일이 휴일이면 출력이 다르다.")
+    @Test
+    void dayCreateAndStoreTest2() {
+        Day day = new Day(1, 1, Week.MONDAY);
+        assertThat(day.toString().trim()).isEqualTo("1월 1일 월(휴일)");
+    }
+
 
     @DisplayName("하루에 법정 공휴일 여부를 저장할 수 있다.")
     @Test
     void daySetHolliday() {
         Day day = new Day(1, 1, Week.MONDAY);
-        day.checkLegalHoliday();
         assertThat(day.isLegalHoliday()).isTrue();
     }
 
@@ -28,7 +35,6 @@ class DayTest {
     @Test
     void daySetDeveloper() {
         Day day = new Day(1, 1, Week.MONDAY);
-        day.checkLegalHoliday();
         day.assignWorker("루비");
         assertTrue(day.isAssigned("루비"));
         day.assignWorker("루피");
