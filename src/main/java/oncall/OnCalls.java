@@ -27,4 +27,12 @@ public class OnCalls {
             }
         }
     }
+
+    public People getWeekdays() {
+        return weekdays;
+    }
+
+    public People getWeekends() {
+        return weekends;
+    }
 }

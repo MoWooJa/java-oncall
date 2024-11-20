@@ -26,6 +26,10 @@ public class People {
         }
     }
 
+    public String getPersonName(int idx) {
+        return people.get(idx).getName();
+    }
+
     public List<Person> getPeople() {
         return people;
     }
