@@ -1,6 +1,6 @@
 package oncall.domain;
 
-import oncall.domain.domain.Holidays;
+import oncall.domain.model.Holidays;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 

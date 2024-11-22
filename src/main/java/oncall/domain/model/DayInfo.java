@@ -1,4 +1,4 @@
-package oncall.domain.domain;
+package oncall.domain.model;
 
 public class DayInfo {
     private int date;

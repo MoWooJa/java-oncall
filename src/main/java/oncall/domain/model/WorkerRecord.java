@@ -1,10 +1,9 @@
-package oncall.domain.domain;
+package oncall.domain.model;
 
 import java.util.List;
 
 public class WorkerRecord {
     private final List<DayInfo> weekdays;
-
     private final List<DayInfo> holidays;
 
     public WorkerRecord(List<DayInfo> weekdays, List<DayInfo> holidays) {
