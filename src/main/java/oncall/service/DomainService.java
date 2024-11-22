@@ -2,7 +2,9 @@ package oncall.service;
 
 import oncall.domain.Calender;
 import oncall.domain.DomainFactory;
-import oncall.domain.WeekdayEmployees;
+import oncall.domain.DutySheet;
+import oncall.domain.WeekdayWorkers;
+import oncall.domain.WeekendWorkers;
 
 public class DomainService {
 
@@ -12,11 +14,19 @@ public class DomainService {
         this.domainFactory = domainFactory;
     }
 
-    public void setDutyWorkingDate(String date) {
-        Calender calender = domainFactory.createCalender(date);
+    public Calender setDutyWorkingDate(String date) {
+        return domainFactory.createCalender(date);
     }
 
-    public void setWeekdayEmployees(String weekdayEmployee) {
-        WeekdayEmployees weekdayEmployees = domainFactory.createWeekdayEmployees(weekdayEmployee);
+    public WeekdayWorkers setWeekdayEmployees(String weekdayEmployee) {
+        return domainFactory.createWeekdayWorkers(weekdayEmployee);
+
+    }
+    public WeekendWorkers setWeekendWorkers(String weekendWorker) {
+        return domainFactory.createWeekendWorkers(weekendWorker);
+    }
+
+    public DutySheet createDutySheet(Calender calender, WeekdayWorkers weekdayWorkers, WeekendWorkers weekendWorkers) {
+        return domainFactory.createDutySheet(calender, weekdayWorkers, weekendWorkers);
     }
 }
